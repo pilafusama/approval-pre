@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<fit_installer>
+    <del_dir dst="bin"/>
+    <copy_dir src="main/bin" dst="bin"/>
+    <del_dir dst="lib"/>
+    <copy_dir src="main/lib" dst="lib"/>
+</fit_installer>

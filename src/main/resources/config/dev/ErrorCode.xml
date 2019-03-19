@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RA错误码转化为前置错误码 -->
+<!--81283yyy RA错误码 ,其中8128是系统标识，yyyy是自己定义的错误码,范围81283000-81283999-->
+
+<ErrorCode>
+	<bankType name="common">
+		<error>
+			<bankCode>3001</bankCode>
+			<cftCode>3001</cftCode>
+			<comment>数据格式错误</comment>
+			<bankcomment>数据格式错误</bankcomment>
+		</error>
+		<error>
+			<bankCode>3002</bankCode>
+			<cftCode>3002</cftCode>
+			<comment>必填域缺失</comment>
+			<bankcomment>必填域缺失</bankcomment>
+		</error>
+		<error>
+			<bankCode>3003</bankCode>
+			<cftCode>3003</cftCode>
+			<comment>手机验证码错误</comment>
+			<bankcomment>手机验证码错误</bankcomment>
+		</error>
+		<error>
+			<bankCode>3004</bankCode>
+			<cftCode>3004</cftCode>
+			<comment>验证签名失败</comment>
+			<bankcomment>验证签名失败</bankcomment>
+		</error>
+		<error>
+			<bankCode>3005</bankCode>
+			<cftCode>3005</cftCode>
+			<comment>通讯公钥异常</comment>
+			<bankcomment>通讯公钥异常</bankcomment>
+		</error>
+		<error>
+			<bankCode>3006</bankCode>
+			<cftCode>3006</cftCode>
+			<comment>文件格式不正确</comment>
+			<bankcomment>文件格式不正确</bankcomment>
+		</error>
+		<error>
+			<bankCode>3007</bankCode>
+			<cftCode>3007</cftCode>
+			<comment>业务日期不正确</comment>
+			<bankcomment>业务日期不正确</bankcomment>
+		</error>
+		<error>
+			<bankCode>3008</bankCode>
+			<cftCode>3008</cftCode>
+			<comment>文件已锁定</comment>
+			<bankcomment>文件已锁定</bankcomment>
+		</error>
+		<error>
+			<bankCode>3009</bankCode>
+			<cftCode>3009</cftCode>
+			<comment>文件不存在</comment>
+			<bankcomment>文件不存在</bankcomment>
+		</error>
+		<error>
+			<bankCode>3010</bankCode>
+			<cftCode>3010</cftCode>
+			<comment>文件无法解密 </comment>
+			<bankcomment>文件无法解密 </bankcomment>
+		</error>
+		<error>
+			<bankCode>3011</bankCode>
+			<cftCode>3011</cftCode>
+			<comment>文件已处理</comment>
+			<bankcomment>文件已处理</bankcomment>
+		</error>
+		<error>
+			<bankCode>3012</bankCode>
+			<cftCode>3012</cftCode>
+			<comment>文件无法解压缩</comment>
+			<bankcomment>文件无法解压缩</bankcomment>
+		</error>
+		<error>
+			<bankCode>3013</bankCode>
+			<cftCode>3013</cftCode>
+			<comment>文件无法删除</comment>
+			<bankcomment>文件无法删除</bankcomment>
+		</error>
+			<error>
+			<bankCode>3014</bankCode>
+			<cftCode>3014</cftCode>
+			<comment>文件摘要不正确</comment>
+			<bankcomment>文件摘要不正确</bankcomment>
+		</error>
+		<error>
+			<bankCode>3015</bankCode>
+			<cftCode>3015</cftCode>
+			<comment>文件读取处理失败</comment>
+			<bankcomment>文件读取处理失败</bankcomment>
+		</error>
+		<error>
+			<bankCode>3016</bankCode>
+			<cftCode>3016</cftCode>
+			<comment>无接口处理码</comment>
+			<bankcomment>无接口处理码</bankcomment>
+		</error>
+		<error>
+			<bankCode>3017</bankCode>
+			<cftCode>3017</cftCode>
+			<comment>RSA解密失败</comment>
+			<bankcomment>RSA解密失败</bankcomment>
+		</error>
+		<error>
+			<bankCode>3018</bankCode>
+			<cftCode>3018</cftCode>
+			<comment>RSA加密失败</comment>
+			<bankcomment>RSA加密失败</bankcomment>
+		</error>
+		<error>
+			<bankCode>3301</bankCode>
+			<cftCode>3301</cftCode>
+			<comment>Unsupported approval type.</comment>
+			<bankcomment>Unsupported approval type.</bankcomment>
+		</error>
+	</bankType>
+</ErrorCode>

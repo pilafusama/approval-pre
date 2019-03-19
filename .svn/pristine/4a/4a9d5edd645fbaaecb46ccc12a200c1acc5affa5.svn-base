@@ -1,0 +1,3 @@
+JAVA_HOME=/data/bank/env/jdk1.8
+JAVA_MAIN_CLASS=com.tenpay.wxwork.approval.presvr.App
+JAVA_OPTS=-Xms512m -Xmx1g -Xss228k -XX:MaxDirectMemorySize=512m

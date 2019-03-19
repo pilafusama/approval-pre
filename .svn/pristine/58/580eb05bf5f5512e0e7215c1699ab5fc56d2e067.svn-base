@@ -1,0 +1,15 @@
+relay.server.host=10.123.5.92
+relay.server.port=22000
+relay.connection.timeout=2000
+relay.client.workerThreadNum=5
+#建立http连接超时
+http.connection.timeout=2000
+#http读取超时
+http.read.timeout=2000
+#http请求超时
+http.request.timeout=2000
+#ssl握手超时
+https.handshake.timeout=2000
+relay.cl5.enable=false
+relay.cl5.modId=65535
+relay.cl5.cmdId=65535

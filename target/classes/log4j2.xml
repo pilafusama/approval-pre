@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG" monitorInterval="30">
+    <Properties>
+    	<Property name="LOG_HOME">${sys:log.home}</Property>
+    </Properties>
+    <Appenders>
+        <!--ACC_LOG 只打印msg 其它信息全部忽略，由程序自己控制-->
+        <File name="BAP-ACC-APPENDER" fileName="${LOG_HOME}/sender/bap_acc.log">
+            <PatternLayout>
+                <Pattern>%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <!--MESSAGE_LOG -->
+        <File name="BAP-MESSAGE-APPENDER" fileName="${LOG_HOME}/sender/bap_message.log">
+            <PatternLayout>
+                <Pattern>%p|%d|%t|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <!-- 性能日志 -->
+        <File name="PERFORMANCE-APPENDER" fileName="${LOG_HOME}/sender/performance.log">
+            <PatternLayout>
+                <Pattern>%d|%t|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+
+        <File name="DEBUG-APPENDER" fileName="${LOG_HOME}/sender/bap_app_debug.log">
+            <Filters>
+                <ThresholdFilter level="DEBUG"/>
+                <ThresholdFilter level="INFO" onMatch="DENY" onMisMatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout>
+                <Pattern>%d|%t|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="INFO-APPENDER" fileName="${LOG_HOME}/sender/bap_app_info.log">
+            <Filters>
+                <ThresholdFilter level="INFO"/>
+                <ThresholdFilter level="WARN" onMatch="DENY" onMisMatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout>
+                <Pattern>%d|%t|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="WARN-APPENDER" fileName="${LOG_HOME}/sender/bap_app_warn.log">
+            <Filters>
+                <ThresholdFilter level="WARN"/>
+                <ThresholdFilter level="ERROR" onMatch="DENY" onMisMatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout>
+                <Pattern>%d|%t|%logger{0}:%line|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="ERROR-ALL-APPENDER" fileName="${LOG_HOME}/sender/error_all.log">
+            <ThresholdFilter level="ERROR" onMatch="ACCEPT" onMisMatch="DENY"/>
+            <PatternLayout>
+                <Pattern>%d|%t|%logger{0}:%line|%msg%n</Pattern>
+            </PatternLayout>
+        </File>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.tenpay.bap" level="DEBUG" additivity="false">
+            <appender-ref ref="DEBUG-APPENDER"/>
+            <appender-ref ref="INFO-APPENDER"/>
+            <appender-ref ref="WARN-APPENDER"/>
+            <appender-ref ref="ERROR-ALL-APPENDER"/>
+        </Logger>
+        <Logger name="com.tenpay.wxwork" level="DEBUG" additivity="false">
+            <appender-ref ref="DEBUG-APPENDER"/>
+            <appender-ref ref="INFO-APPENDER"/>
+            <appender-ref ref="WARN-APPENDER"/>
+            <appender-ref ref="ERROR-ALL-APPENDER"/>
+        </Logger>
+
+        <!--其它框架日志只打印ERROR级别log-->
+        <Logger name="com" level="ERROR" additivity="false">
+            <appender-ref ref="ERROR-ALL-APPENDER"/>
+        </Logger>
+        <Logger name="org" level="ERROR" additivity="false">
+            <appender-ref ref="ERROR-ALL-APPENDER"/>
+        </Logger>
+        <!--其它框架日志只打印ERROR级别log-->
+
+        <Logger name="acc" level="INFO" additivity="false">
+            <appender-ref ref="BAP-ACC-APPENDER"/>
+        </Logger>
+        <Logger name="message" level="INFO" additivity="false">
+            <appender-ref ref="BAP-MESSAGE-APPENDER"/>
+        </Logger>
+        <Logger name="performance" level="INFO" additivity="false">
+            <appender-ref ref="PERFORMANCE-APPENDER"/>
+        </Logger>
+        <Root level="ERROR">
+            <appender-ref ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

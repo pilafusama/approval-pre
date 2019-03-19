@@ -1,0 +1,83 @@
+package com.tenpay.wxwork.approval.presvr.sender.bean;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+//费用
+public class Flow1002Detail {
+	//审批流类型
+	@JsonProperty("type")
+	private String type;
+	
+	//费用类型
+	@JsonProperty("expense_type")
+	private String expense_type;
+	
+	//事由
+	@JsonProperty("reason")
+	private String reason;
+	
+	//备注
+	@JsonProperty("common")
+	private String common;
+	
+	//发生时间
+	@JsonProperty("time")
+	private String time;
+
+	public Flow1002Detail(Flow1002DetailReq flow1002DetailReq){
+		this.setType(flow1002DetailReq.getType());
+		this.setExpenseType(flow1002DetailReq.getExpenseType());
+		this.setReason(flow1002DetailReq.getReason());
+		this.setCommon(flow1002DetailReq.getCommon());
+		
+        Long timestamp = Long.parseLong(flow1002DetailReq.getTime());
+        String date = new SimpleDateFormat("yyyyMMddHHmmSS", Locale.CHINA).format(new Date(timestamp));
+		this.setTime(date.substring(0,14));
+	}
+	
+	@JsonIgnore
+	public String getType() {
+		return type;
+	}
+	@JsonIgnore
+	public void setType(String type) {
+		this.type = type;
+	}
+	@JsonIgnore
+	public String getExpenseType() {
+		return expense_type;
+	}
+	@JsonIgnore
+	public void setExpenseType(String expense_type) {
+		this.expense_type = expense_type;
+	}
+	@JsonIgnore
+	public String getReason() {
+		return reason;
+	}
+	@JsonIgnore
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	@JsonIgnore
+	public String getCommon() {
+		return common;
+	}
+	@JsonIgnore
+	public void setCommon(String common) {
+		this.common = common;
+	}
+	@JsonIgnore
+	public String getTime() {
+		return time;
+	}
+	@JsonIgnore
+	public void setTime(String time) {
+		this.time = time;
+	}
+}
